@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "FSuHU5PEXAEHL1l6Ibb3DkghkPOo0qUOTVTtQWH2qH4jlQE7z33N9BumEIJ5O5DWi3Mgtg/XPBiSnmvLggB8oQ==",
+  "success": true,
+  "projectFilePath": "/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Api/TecNM.NotesApp.Api.csproj",
+  "expectedPackageFiles": [
+    "/home/manjaropc/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/dapper.contrib/2.0.78/dapper.contrib.2.0.78.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/mysqlconnector/2.3.0-beta.2/mysqlconnector.2.3.0-beta.2.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

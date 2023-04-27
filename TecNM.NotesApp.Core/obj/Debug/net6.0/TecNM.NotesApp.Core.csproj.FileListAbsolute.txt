@@ -1,0 +1,12 @@
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/bin/Debug/net6.0/TecNM.NotesApp.Core.deps.json
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/bin/Debug/net6.0/TecNM.NotesApp.Core.dll
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/bin/Debug/net6.0/ref/TecNM.NotesApp.Core.dll
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/bin/Debug/net6.0/TecNM.NotesApp.Core.pdb
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/TecNM.NotesApp.Core.csproj.AssemblyReference.cache
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/TecNM.NotesApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/TecNM.NotesApp.Core.AssemblyInfoInputs.cache
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/TecNM.NotesApp.Core.AssemblyInfo.cs
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/TecNM.NotesApp.Core.csproj.CoreCompileInputs.cache
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/TecNM.NotesApp.Core.dll
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/ref/TecNM.NotesApp.Core.dll
+/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/obj/Debug/net6.0/TecNM.NotesApp.Core.pdb

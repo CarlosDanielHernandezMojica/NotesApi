@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "m79VGGqg26YLA2rNZpvqB5kHhPmTSj7Q7OdGMKE5MY+zCtcY3ZIx0MrcwvrHGO/gTn9gtfFgqTRoDZwBSpobag==",
+  "success": true,
+  "projectFilePath": "/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TecNM.NotesApp.Core/TecNM.NotesApp.Core.csproj",
+  "expectedPackageFiles": [
+    "/home/manjaropc/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
