@@ -19,7 +19,7 @@ public class UserRepository: IUserRepository
     public async Task<User> SaveAsync(User user)
     {
         user.Id = await _dbContext.Connection.InsertAsync(user);
-
+        System.Console.WriteLine(user.Id);
         return user;
     }
 
@@ -62,12 +62,22 @@ public class UserRepository: IUserRepository
         return user.IsDeleted == true ? null : user;
     }
 
-    public async Task<User> Login(User user)
+    public async Task<User> Login(string username, string password)
     {
-        string sql = "SELECT * FROM User WHERE Username = '" + user.Username + "' AND Password = '" + user.Password + "' AND IsDeleted = 0;";
+        string sql = "SELECT * FROM User WHERE Username = '" + username + "' AND Password = '" + password + "' AND IsDeleted = 0;";
         
-        var user_response = await _dbContext.Connection.QuerySingleOrDefaultAsync<User>(sql);
-
-        return user_response;
+        var user = await _dbContext.Connection.QuerySingleOrDefaultAsync<User>(sql);
+        if (user == null)
+        {
+            user = new User()
+            {
+                Id = 0,
+                Username = null,
+                Password = null
+            };
+        }
+        System.Console.WriteLine(user.Username);
+        return user;
     }
+    
 }

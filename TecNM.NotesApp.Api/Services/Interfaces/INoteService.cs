@@ -11,7 +11,7 @@ public interface INoteService
     Task<NoteDto>UpdateAsync(NoteDto note);
     
     //Return note list method
-    Task<List<NoteDto>>GetAllAsync();
+    Task<List<NoteDto>>GetAllByIdUserAsync(int idUser);
     
     //Return the id of the note that will be deleted method
     Task<bool>NoteExist(int id);

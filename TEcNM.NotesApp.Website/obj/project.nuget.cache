@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "dS5/9zYqGUFVU+9NOTdYL5skneIQYmh/kAXczsbHe6ljBfFLhn6DnAlVEiiWSb9+/f1VaD3ECxLqHkIDZzTprw==",
+  "success": true,
+  "projectFilePath": "/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/TEcNM.NotesApp.Website.csproj",
+  "expectedPackageFiles": [
+    "/home/manjaropc/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/home/manjaropc/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

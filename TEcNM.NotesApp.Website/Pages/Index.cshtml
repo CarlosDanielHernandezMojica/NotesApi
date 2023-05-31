@@ -1,0 +1,59 @@
+﻿@page "{id:int}"
+@using TecNM.NotesApp.Core.Dto
+@model IndexModel
+@{
+    ViewData["Title"] = "Notas";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            margin-top: 50px;
+            max-width: 800px;
+            
+        }
+        
+        .card {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            height: 300px;
+            width: 300px;
+            border-radius: 20px;
+            display: flex;
+       
+        }
+        
+        h2.title {
+            margin-top: 100px;
+            text-align: left;
+        }
+        
+        h3{
+            margin: auto;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="title">Notes App</h2>
+    <div class="card-container">
+        <a class="btn btn-outline-primary card" asp-page="/Notas/List" asp-route-id="@Model.userDto.Id" role="button"><h3>Notas</h3></a>
+        <a class="btn btn-outline-primary card" asp-page="/Recordatorios/List" asp-route-id="@Model.userDto.Id" role="button"><h3>Recordatorios</h3></a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

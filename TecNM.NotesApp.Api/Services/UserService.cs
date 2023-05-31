@@ -83,15 +83,17 @@ public class UserService: IUserService
         return await _userRepository.DeleteAsync(id);
     }
 
-    public async Task<bool> Login(UserDto userDto)
+    public async Task<UserDto> Login(string username, string password)
     {
-        var user = new User()
+        
+        var result = await _userRepository.Login(username, password);
+        var userDto = new UserDto()
         {
-            Username = userDto.Username,
-            Password = userDto.Password
+            Id = result.Id,
+            Username = result.Username,
+            Password = result.Password
         };
-        var result = await _userRepository.Login(user);
-
-        return (result != null);
+        
+        return userDto;
     }
 }

@@ -8,11 +8,7 @@ public class NoteDto: DtoBase
     public string Description { get; set; }
     public int idUser { get; set; }
     public int idCategory { get; set; }
-
-    public NoteDto()
-    {
-    }
-
+    public NoteDto(){}
     public NoteDto(Note note)
     {
         Id = note.Id;

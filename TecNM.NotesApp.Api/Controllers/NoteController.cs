@@ -17,11 +17,13 @@ public class NoteController: ControllerBase
     }
     
     [HttpGet]
-    public async Task<ActionResult<Response<List<NoteDto>>>> GetAll()
+    public async Task<ActionResult<Response<List<NoteDto>>>> GetAllByIdUser(int idUser)
     {
         var response = new Response<List<NoteDto>>
         {
-            Data = await _noteService.GetAllAsync()
+            Data = await _noteService.GetAllByIdUserAsync(idUser),
+            Message = "Hola"
+
         };
         
         return Ok(response);
@@ -36,6 +38,27 @@ public class NoteController: ControllerBase
         };
         
         return Created($"/api/[controller]/{response.Data.Id}", response);
+    }
+    
+    [HttpGet]
+    [Route("/savenote")]
+    public async Task<ActionResult<Response<bool>>> SaveNote(string title, string descripcion, int iduser)
+    {
+        var noteDto = new NoteDto() 
+        {
+            Title = title,
+            Description = descripcion,
+            idUser = iduser,
+            idCategory = 1
+        };
+        
+        var response = new Response<NoteDto>()
+        {
+            Data = await _noteService.SaveAsync(noteDto),
+            Message = "Hola"
+        };
+        
+        return Ok(response);
     }
 
     [HttpGet]

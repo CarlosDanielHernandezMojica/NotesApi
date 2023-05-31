@@ -53,9 +53,9 @@ public class NoteService: INoteService
         return noteDto;
     }
 
-    public async Task<List<NoteDto>> GetAllAsync()
+    public async Task<List<NoteDto>> GetAllByIdUserAsync(int idUser)
     {
-        var notes = await _noteRepository.GetAllAsync();
+        var notes = await _noteRepository.GetAllByIdUserAsync(idUser);
         var notesDto = notes.Select(c => new NoteDto(c)).ToList();
         return notesDto;
     }

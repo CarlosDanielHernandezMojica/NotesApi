@@ -31,6 +31,9 @@ public class UserController: ControllerBase
     [HttpPost]
     public async Task<ActionResult<Response<UserDto>>> Post([FromBody] UserDto userDto)
     {
+
+        System.Console.WriteLine(userDto.Username);
+        System.Console.WriteLine(userDto.Password);
         var response = new Response<UserDto>()
         {
             Data = await _userService.SaveAsync(userDto)
@@ -39,24 +42,37 @@ public class UserController: ControllerBase
         return Created($"/api/[controller]/{response.Data.Id}", response);
     }
     
-    [HttpGet]
+    [HttpPost]
     [Route("/login")]
-    public async Task<ActionResult<Response<bool>>> Login(string username, string password)
+    public async Task<ActionResult<Response<bool>>> Login([FromBody] UserDto userDto)
     {
-        var userDto = new UserDto()
-        {
-            Username = username,
-            Password = password
-        };
+        var response = new Response<UserDto>();
         
-        var response = new Response<bool>();
+        var result = await _userService.Login(userDto.Username, userDto.Password);
         
-        var result = await _userService.Login(userDto);
-
         response.Data = result;
+        response.Message = "Hola";
         
         return Ok(response);
     }
+    
+    // [HttpGet]
+    // [Route("/registro")]
+    // public async Task<ActionResult<Response<bool>>> Registro(string username, string password)
+    // {
+    //     var userDto = new UserDto()
+    //     {
+    //         Username = username,
+    //         Password = password
+    //     };
+    //     
+    //     var response = new Response<UserDto>()
+    //     {
+    //         Data = await _userService.SaveAsync(userDto)
+    //     };
+    //     
+    //     return Ok(response);
+    // }
     
     [HttpGet]
     [Route("{id:int}")]

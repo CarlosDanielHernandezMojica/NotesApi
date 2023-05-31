@@ -1,4 +1,5 @@
 using TecNM.NotesApp.Core.Dto;
+using TecNM.NotesApp.Core.Entities;
 
 namespace TecNM.NotesApp.Api.Services.Interfaces;
 
@@ -21,5 +22,5 @@ public interface IUserService
     //Get user by id method
     Task<UserDto>GetById(int id);
 
-    Task<bool> Login(UserDto user);
+    Task<UserDto> Login(string username, string password);
 }

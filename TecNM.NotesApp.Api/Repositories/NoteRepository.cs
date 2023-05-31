@@ -29,9 +29,9 @@ public class NoteRepository: INoteRepository
         return note;
     }
 
-    public async Task<List<Note>> GetAllAsync()
+    public async Task<List<Note>> GetAllByIdUserAsync(int idUser)
     {
-        const string sql = "SELECT * FROM Note WHERE IsDeleted = 0";
+        string sql = "SELECT * FROM Note WHERE IsDeleted = 0 AND IdUser = " + idUser;
 
         var notes = await _dbContext.Connection.QueryAsync<Note>(sql);
 

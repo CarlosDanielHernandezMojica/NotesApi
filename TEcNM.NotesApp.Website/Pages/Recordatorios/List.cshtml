@@ -1,0 +1,214 @@
+@page
+@model TEcNM.NotesApp.Website.Pages.Recordatorios.List
+
+@{
+    ViewData["Title"] = "Recordatorios";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        
+        .title {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .reminders-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .reminders-list {
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .reminders-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .reminders-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reminder-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex; 
+            justify-content: space-between;
+        }
+        
+        .reminder-card:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .calendar {
+            height: 300px;
+            flex: 2;
+            padding-left: 20px;
+        }
+        
+        .reminder-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .reminder-actions button {
+            flex: 1;
+            margin-right: 10px;
+        }
+        
+        .reminder-actions button:last-child {
+            margin-right: 0;
+        }
+        
+        .reminder-textarea {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .modal{
+            border-radius: 20px;
+        }
+        
+        .reminders-title{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .title{
+        
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button class="btn btn-primary" id="btn-back"><i class="carousel-control-prev-icon"></i></button>
+    <h2 class="title">Notes App</h2>
+    <div class="reminders-container">
+        <div class="reminders-list">
+            <div class="reminders-title">
+                <h4>Recordatorios</h4>
+                <button class="btn btn-primary" id="btn-add">+</button>
+            </div>
+            <ul>
+                <li>
+                    <div class="reminder-card">
+                        <text>Comprar leche</text>
+                        <div class="actions">
+                            <button class="btn btn-primary" id="btn-edit-reminder">
+                                Editar
+                            </button>
+                            <button class="btn btn-danger" id="btn-delete">
+                                Borrar
+                            </button>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="reminder-card">
+                        Título de la nota 2
+                    </div>
+                </li>
+                <li>
+                    <div class="reminder-card">
+                        Título de la nota 3
+                    </div>
+                </li>
+                <!-- Agrega aquí más elementos de lista si es necesario -->
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="addNoteModal" tabindex="-1" role="dialog" aria-labelledby="addNoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addNoteModalLabel">Agregar Nota</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="reminder-title">Título</label>
+                    <input type="text" class="form-control" id="reminder-title">
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="save-reminder-btn">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirmationDialog" tabindex="-1" role="dialog" aria-labelledby="confirmationDialogLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationDialogLabel">Confirmación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro de eliminar este elemento?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirm-delete-btn">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+        $(document).ready(function () {
+            $("#btn-add").click(function () {
+                $("#addNoteModal").modal("show");
+                $("#addNoteModalLabel").text("Agregar recordatorio");
+            });
+        });
+</script>
+
+<script>
+        $(document).ready(function () {
+                    $("#btn-delete").click(function () {
+                        $("#confirmationDialog").modal("show");
+                    });
+                });
+</script>
+
+<script>
+        $(document).ready(function () {
+            $("#btn-edit-reminder").click(function () {
+                $("#addNoteModalLabel").text("Editar recordatorio");
+                $("#addNoteModal").modal("show");
+            });
+        });
+</script>
+<script>
+        document.getElementById("btn-back").addEventListener("click", function () {
+            window.location.href = "../../";
+        });
+    </script>
+</body>
+</html>
+
