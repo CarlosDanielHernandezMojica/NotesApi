@@ -18,11 +18,11 @@ public class ReminderController: ControllerBase
     }
     
     [HttpGet]
-    public async Task<ActionResult<Response<List<ReminderDto>>>> GetAll()
+    public async Task<ActionResult<Response<List<ReminderDto>>>> GetAll(int id)
     {
         var response = new Response<List<ReminderDto>>
         {
-            Data = await _reminderService.GetAllAsync()
+            Data = await _reminderService.GetAllAsync(id)
         };
         
         return Ok(response);

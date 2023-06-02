@@ -11,7 +11,7 @@ public interface IReminderService
     Task<ReminderDto>UpdateAsync(ReminderDto reminder);
     
     //Return reminder list method
-    Task<List<ReminderDto>>GetAllAsync();
+    Task<List<ReminderDto>>GetAllAsync(int id);
     
     //Return the id of the reminder that will be deleted method
     Task<bool>ReminderExist(int id);

@@ -46,10 +46,17 @@
 <body>
 <div class="container">
     <h2 class="title">Notes App</h2>
+    <a class="btn btn-outline-primary" asp-page="/Login" style="float: right;">Cerrar sesion</a>
     <div class="card-container">
-        <a class="btn btn-outline-primary card" asp-page="/Notas/List" asp-route-id="@Model.userDto.Id" role="button"><h3>Notas</h3></a>
-        <a class="btn btn-outline-primary card" asp-page="/Recordatorios/List" asp-route-id="@Model.userDto.Id" role="button"><h3>Recordatorios</h3></a>
+        <a class="btn btn-outline-primary card" 
+           asp-page="/Notas/List" asp-route-id="@Model.userDto.Id" 
+           role="button"><h3>Notas</h3></a>
+        <a class="btn btn-outline-primary card" 
+           asp-page="/Recordatorios/List" 
+           asp-route-id="@Model.userDto.Id" 
+           role="button"><h3>Recordatorios</h3></a>
     </div>
+    
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

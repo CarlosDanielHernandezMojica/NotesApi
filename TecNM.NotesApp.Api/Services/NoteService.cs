@@ -45,6 +45,7 @@ public class NoteService: INoteService
 
         note.Title = noteDto.Title;
         note.Description = noteDto.Description;
+        noteDto.idUser = note.idUser;
         note.UpdatedBy = "";
         note.UpdatedDate = DateTime.Now;
 

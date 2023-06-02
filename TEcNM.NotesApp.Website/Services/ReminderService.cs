@@ -16,9 +16,9 @@ public class ReminderService: IReminderService
     {
     }
 
-    public async Task<Response<List<ReminderDto>>> GetAllAsync()
+    public async Task<Response<List<ReminderDto>>> GetAllAsync(int id)
     {
-        var url = $"{_baseUrl}{_endPoint}";
+        var url = $"{_baseUrl}{_endPoint}?id={id}";
         
         var client = new HttpClient();
         var res = await client.GetAsync(url);

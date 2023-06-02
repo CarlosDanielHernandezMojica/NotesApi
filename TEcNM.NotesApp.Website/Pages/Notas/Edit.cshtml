@@ -1,0 +1,62 @@
+@page "{idUser:int}/{idNote:int?}"
+@model TEcNM.NotesApp.Website.Pages.Notas.Edit
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        .container-fluid{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>@Model.Title</h2>
+            <form method="post">
+                <input type="hidden" asp-for="Note.Id"/>
+                <input type="hidden" asp-for="Note.idUser"/>
+                <div class="form-group">
+                    <label asp-for="Note.Title"></label>
+                    <input asp-for="Note.Title" class="form-control" maxlength="20"/>
+                    
+                    <span class="text_danger" asp-validation-for="Note.Title"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Note.Description"></label>
+                    <input asp-for="Note.Description" class="form-control" maxlength="100"/>
+                    
+                    <span class="text_danger" asp-validation-for="Note.Description"></span>
+                </div>
+                @if (Model.Errors.Count < 0)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            @foreach (var error in Model.Errors)
+                            {
+                                <li>An error has ocurred</li>
+                            }
+                        </ul>
+                    </div>
+                } 
+                
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary mr-3">Save</button>
+                        <a class="btn btn-secondary" a-asp-area="" asp-page="/Notas/List" 
+                           asp-route-id="@Model.idUsuario">Cancel</a>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,9 +1,5 @@
-@page
-@model TEcNM.NotesApp.Website.Pages.Recordatorios.List
-
-@{
-    ViewData["Title"] = "Recordatorios";
-}
+@page "{id:int}"
+@model TEcNM.RemindersApp.Website.Pages.Recordatorios.List
 
 <!DOCTYPE html>
 <html>
@@ -97,40 +93,33 @@
 </head>
 <body>
 <div class="container">
-    <button class="btn btn-primary" id="btn-back"><i class="carousel-control-prev-icon"></i></button>
+    <a class="btn btn-primary" id="btn-back" asp-page="/Index" asp-route-id="@Model.userDto.Id"><i class="carousel-control-prev-icon"></i></a>
     <h2 class="title">Notes App</h2>
     <div class="reminders-container">
         <div class="reminders-list">
             <div class="reminders-title">
                 <h4>Recordatorios</h4>
-                <button class="btn btn-primary" id="btn-add">+</button>
+                <a a-asp-area="" asp-page="/Recordatorios/Edit" 
+                   asp-route-idUser="@Model.userDto.Id" class="btn btn-primary" role="button">+</a>
             </div>
             <ul>
-                <li>
-                    <div class="reminder-card">
-                        <text>Comprar leche</text>
-                        <div class="actions">
-                            <button class="btn btn-primary" id="btn-edit-reminder">
-                                Editar
-                            </button>
-                            <button class="btn btn-danger" id="btn-delete">
-                                Borrar
-                            </button>
-                        </div>
+                @foreach (var reminder in @Model.Reminders)
+                {
+                    <li>
+                        <div class="reminder-card">
+                            <text>@reminder.Name</text>
+                            <div class="actions">
+                                <a a-asp-area="" asp-page="/Recordatorios/Edit" 
+                                   asp-route-idUser="@Model.userDto.Id" asp-route-idReminder="@reminder.Id" class="btn btn-primary" role="button">Edit
+                                </a>
+                                <a a-asp-area="" asp-page="/Recordatorios/Delete" 
+                                   asp-route-idUser="@Model.userDto.Id" asp-route-idReminder="@reminder.Id" class="btn btn-danger" role="button">Delete
+                                </a>
+                            </div>
 
-                    </div>
-                </li>
-                <li>
-                    <div class="reminder-card">
-                        Título de la nota 2
-                    </div>
-                </li>
-                <li>
-                    <div class="reminder-card">
-                        Título de la nota 3
-                    </div>
-                </li>
-                <!-- Agrega aquí más elementos de lista si es necesario -->
+                        </div>
+                    </li>
+                }
             </ul>
         </div>
 
@@ -179,36 +168,6 @@
             </div>
         </div>
     </div>
-<script>
-        $(document).ready(function () {
-            $("#btn-add").click(function () {
-                $("#addNoteModal").modal("show");
-                $("#addNoteModalLabel").text("Agregar recordatorio");
-            });
-        });
-</script>
 
-<script>
-        $(document).ready(function () {
-                    $("#btn-delete").click(function () {
-                        $("#confirmationDialog").modal("show");
-                    });
-                });
-</script>
-
-<script>
-        $(document).ready(function () {
-            $("#btn-edit-reminder").click(function () {
-                $("#addNoteModalLabel").text("Editar recordatorio");
-                $("#addNoteModal").modal("show");
-            });
-        });
-</script>
-<script>
-        document.getElementById("btn-back").addEventListener("click", function () {
-            window.location.href = "../../";
-        });
-    </script>
 </body>
 </html>
-

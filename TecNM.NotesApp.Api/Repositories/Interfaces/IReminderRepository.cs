@@ -9,7 +9,7 @@ public interface IReminderRepository
     //Update product categories method
     Task<Reminder> UpdateAsync(Reminder reminder);
     //Return reminder list method
-    Task<List<Reminder>> GetAllAsync();
+    Task<List<Reminder>> GetAllAsync(int id);
     //Return the id of the reminder that will be deleted method
     Task<bool> DeleteAsync(int id);
     //Get reminder by id method

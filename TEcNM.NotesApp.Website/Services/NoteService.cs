@@ -43,7 +43,8 @@ public class NoteService: INoteService
     public async Task<Response<NoteDto>> SaveAsync(NoteDto note)
     {
         var url = $"{_baseUrl}{_endPoint}";
-
+        System.Console.WriteLine(note.idUser);
+        note.idCategory = 1;
         var jsonRequest = JsonConvert.SerializeObject(note);
         var content = new StringContent(jsonRequest, System.Text.Encoding.UTF8, "application/json");
         

@@ -43,6 +43,8 @@
             border-radius: 10px;
             padding: 10px;
             cursor: pointer;
+            display: flex; 
+            justify-content: space-between;
         }
         
         .note-card:hover {
@@ -50,7 +52,7 @@
         }
         
         .note-content {
-            flex: 2;
+            flex: 1;
             padding-left: 20px;
         }
         
@@ -84,6 +86,11 @@
             border-radius: 20px;
         }
         
+        .reminders-title{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -92,32 +99,42 @@
     <h2 class="title">Notes App</h2>
     <div class="notes-container">
         <div class="notes-list">
+            <div class="reminders-title" >
+                <h4>Notas</h4>
+                <a a-asp-area="" asp-page="/Notas/Edit" 
+                   asp-route-idUser="@Model.userDto.Id" class="btn btn-primary" role="button">+</a>
+            </div>
+            
             <ul>
                 @foreach (var note in @Model.Notes)
                 {
                     <li>
                         <div class="note-card">
-                            @note.Title
-                        </div>
-                    </li>    
+                            <text>@note.Title</text>
+                            <div class="actions">
+                                <a a-asp-area="" asp-page="/Notas/View" 
+                                   asp-route-idUser="@Model.userDto.Id" asp-route-idNote="@note.Id" class="btn btn-primary" role="button">Ver
+                                    </a>
+                                <a a-asp-area="" asp-page="/Notas/Edit" 
+                                   asp-route-idUser="@Model.userDto.Id" asp-route-idNote="@note.Id" class="btn btn-primary" role="button">Edit
+                                </a>
+                                <a a-asp-area="" asp-page="/Notas/Delete" 
+                                   asp-route-idUser="@Model.userDto.Id" asp-route-idNote="@note.Id" class="btn btn-danger" role="button">Delete
+                                </a>
+                            </div>
+                        </div></li>   
                 }
             </ul>
         </div>
-        <div class="note-content">
-            <div class="note-textarea">
-                <h4>Informacion</h4>
-                <div class="note-information">
-                    <text class="information">@Model.idNote</text>
-
-                </div>
-            </div>
-            <div class="note-actions">
-                <button class="btn btn-primary" id="add-note-btn">Agregar</button>
-                <button class="btn btn-secondary" id="edit-note-btn">Editar</button>
-                
-                <button class="btn btn-danger" id="delete-btn">Eliminar</button>
-            </div>
-        </div>
+        @* <div class="note-content"> *@
+        @*     <div class="note-textarea"> *@
+        @*         <h4>Informacion</h4> *@
+        @*         <div class="note-information"> *@
+        @*             <text class="information">@Model.idNote</text> *@
+        @* *@
+        @*         </div> *@
+        @*     </div> *@
+        @* </div> *@
     </div>
 </div>
 

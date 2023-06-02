@@ -13,7 +13,7 @@ public class List : PageModel
     public List<NoteDto> Notes { get; set; }
 
     public int idNote;
-
+    
     private readonly IUserService _service;
     private readonly INoteService _noteService;
     public List(IUserService service, INoteService noteService)
@@ -33,12 +33,15 @@ public class List : PageModel
         return Page();
     }
 
-    public void GetId(int id)
+    public void GetId(int noteId)
     {
-        idNote = id;
-        System.Console.WriteLine("Id List");
-        System.Console.WriteLine(id);
+        idNote = noteId;
+        
+        System.Console.WriteLine(noteId);
+        System.Console.WriteLine(idNote);
+        
     }
+    
     
 }
 

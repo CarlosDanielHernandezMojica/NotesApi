@@ -27,12 +27,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Notas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90YXMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Notas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90YXMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Notas/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90YXMvTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Notas/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90YXMvVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Recordatorios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVjb3JkYXRvcmlvcy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Recordatorios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVjb3JkYXRvcmlvcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/manjaropc/Documentos/Dev/NET/TecNM.NotesApp/TEcNM.NotesApp.Website/Pages/Recordatorios/List.cshtml]

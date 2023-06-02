@@ -52,9 +52,9 @@ public class ReminderService: IReminderService
         return reminderDto;
     }
 
-    public async Task<List<ReminderDto>> GetAllAsync()
+    public async Task<List<ReminderDto>> GetAllAsync(int id)
     {
-        var reminders = await _reminderRepository.GetAllAsync();
+        var reminders = await _reminderRepository.GetAllAsync(id);
         var remindersDto = reminders.Select(c => new ReminderDto(c)).ToList();
         return remindersDto;
     }

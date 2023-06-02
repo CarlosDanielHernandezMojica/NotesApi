@@ -5,7 +5,7 @@ namespace TEcNM.NotesApp.Website.Services.Interfaces;
 
 public interface IReminderService
 {   
-    Task<Response<List<ReminderDto>>> GetAllAsync();
+    Task<Response<List<ReminderDto>>> GetAllAsync(int id);
 
     Task<Response<ReminderDto>> GetById(int id);
 

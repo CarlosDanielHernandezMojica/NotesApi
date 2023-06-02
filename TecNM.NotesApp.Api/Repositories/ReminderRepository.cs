@@ -29,9 +29,9 @@ public class ReminderRepository: IReminderRepository
         return reminder;
     }
 
-    public async Task<List<Reminder>> GetAllAsync()
+    public async Task<List<Reminder>> GetAllAsync(int id)
     {
-        const string sql = "SELECT * FROM Reminder WHERE IsDeleted = 0";
+        string sql = "SELECT * FROM Reminder WHERE IsDeleted = 0 AND idUser =" + id;
 
         var reminders = await _dbContext.Connection.QueryAsync<Reminder>(sql);
 
